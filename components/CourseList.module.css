@@ -1,0 +1,38 @@
+.pageTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+
+.courses {
+    display: flex;
+    justify-content: center;
+}
+
+.courseListItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    margin: auto auto 10px;
+    height: 50px;
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+}
+
+.courseListItem:hover {
+    background: white;
+    color: black;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+}
