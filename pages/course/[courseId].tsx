@@ -8,6 +8,7 @@ import React, {
     useState
 } from 'react';
 import Lesson from "../../components/lesson/lesson";
+import DiscussionPost from "@/components/discussionPost/discussionPost";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const courseId = context.params?.courseId as string
@@ -348,10 +349,7 @@ export default function Post({courseData}: courseProps) {
                             <ul className={styles.discussionResponses}>
                                 {discussionPostsState.map(({postId, authorName, postDate, content}) => (
                                     <div key={postId} className={styles.discussionResponseItem}>
-                                        <h3>{authorName + ' - ' + postDate}</h3>
-                                        <div>
-                                            {content}
-                                        </div>
+                                        <DiscussionPost authorName={authorName} postDate={postDate} content={content}/>
                                     </div>
                                 ))}
                             </ul>
