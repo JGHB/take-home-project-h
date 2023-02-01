@@ -2,8 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import styles from '@/styles/FreeBooks.module.css'
 import React, {useState} from "react";
-
-const fetcher = (url: string) => fetch(url).then(r => r.json())
+import Book from "@/components/book/book";
 
 export default function FreeBooks() {
 
@@ -32,7 +31,7 @@ export default function FreeBooks() {
                 imageURL: book.formats['image/jpeg'] ? book.formats['image/jpeg'] : undefined,
                 epubURL: book.formats['application/epub+zip']
                     ? book.formats['application/epub+zip'] : null,
-                pdfURL : book.formats['application/pdf'] ? book.formats['application/pdf'] : null
+                pdfURL: book.formats['application/pdf'] ? book.formats['application/pdf'] : null
             }
         })
         setBooks(newBooks)
@@ -72,39 +71,13 @@ export default function FreeBooks() {
                             onClick={updateBooks}
                             className={styles.getNewBooksButton}
                         >
-                            Get Books</button>
+                            Get Books
+                        </button>
                     </div>
                     <ul>
                         {books?.map(book => (
-                            <div key={book.id} className={styles.bookItem}>
-                                <div className={styles.nonImageContent}>
-                                    <h2>
-                                        {book.title}
-                                    </h2>
-                                    <h4>
-                                        {book.author}
-                                    </h4>
-                                    <div className={styles.postingOptions}>
-                                        {book.epubURL &&
-                                            <a
-                                                href={book.epubURL}
-                                                className={styles.postingOption}
-                                            >
-                                                Epub
-                                            </a>
-                                        }
-                                        {book.pdfURL &&
-                                            <a
-                                                href={book.pdfURL}
-                                                target="_blank"
-                                                className={styles.postingOption}
-                                            >
-                                                PDF
-                                            </a>
-                                        }
-                                    </div>
-                                </div>
-                                <img src={book.imageURL} alt="test" className={styles.bookImage}/>
+                            <div key={book.id}>
+                                <Book book={book}/>
                             </div>
                         ))}
                     </ul>

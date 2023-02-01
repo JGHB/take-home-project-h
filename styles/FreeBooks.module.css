@@ -39,60 +39,6 @@
     cursor: pointer;
 }
 
-.bookItem {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    margin: auto auto 30px;
-    padding: 10px;
-    border-color: white;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 15px;
-}
-
-.bookImage {
-    border-radius: 15px;
-    border-color: white;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 15px;
-    max-width: 400px;
-    height: auto;
-}
-
-.nonImageContent {
-    width: 100%;
-    margin-right: 10px;
-}
-
-.postingOptions {
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-.postingOption {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin: auto auto 10px;
-    height: 50px;
-    border-color: white;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 15px;
-    cursor: pointer;
-}
-
-.postingOption:hover {
-    background: white;
-    color: black;
-}
-
 .container {
     width: 100%
 }
@@ -109,8 +55,5 @@
 @media only screen and (max-width: 600px) {
     .main {
         padding: 1rem;
-    }
-    .bookItem {
-        border-style: none;
     }
 }
