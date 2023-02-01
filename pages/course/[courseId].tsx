@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 import Lesson from "../../components/lesson/lesson";
 import DiscussionPost from "@/components/discussionPost/discussionPost";
+import DiscussionPostEditor from "@/components/discussionPostEditor/discussionPostEditor";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const courseId = context.params?.courseId as string
@@ -303,48 +304,19 @@ export default function Post({courseData}: courseProps) {
                                 </div>
                             }
                             {editing &&
-                                <>
-                                    <div className={styles.inputLabel}>
-                                        Name
-                                    </div>
-                                    <div className={styles.inputContainer}>
-                                        <input value={newPostAuthor} onChange={handleNameChange} className={styles.nameInput}/>
-                                    </div>
-                                    <div className={styles.inputLabel}>
-                                        Post Here
-                                    </div>
-                                    <div className={styles.inputContainer}>
-                                        <textarea value={newPost} onChange={handlePostChange} className={styles.postInput}/>
-                                    </div>
-                                    <div className={styles.postingOptions}>
-                                        <div
-                                            onClick={() => {
-                                                const newDiscussionPost = {
-                                                    postId: discussionPostsState.length + 1,
-                                                    authorId: 1,
-                                                    authorName: newPostAuthor,
-                                                    postDate: date,
-                                                    content: newPost
-                                                }
-                                                setDiscussionPosts([newDiscussionPost ,...discussionPostsState])
-                                                setNewPostAuthor('')
-                                                setNewPost('')
-                                                setEditing(false)
-                                            }}
-                                            className={styles.postingOption}
-                                        >
-                                            Post
-                                        </div>
-                                        <div
-                                            onClick={() => {
-                                                setEditing(false)
-                                            }}
-                                            className={styles.postingOption}
-                                        >
-                                            Cancel
-                                        </div>
-                                    </div>
-                                </>
+                                    <DiscussionPostEditor
+                                        newPostAuthor={newPostAuthor}
+                                        newPost={newPost}
+                                        content={newPost}
+                                        date={date}
+                                        discussionPostsState={discussionPostsState}
+                                        handleNameChange={handleNameChange}
+                                        handlePostChange={handlePostChange}
+                                        setDiscussionPosts={setDiscussionPosts}
+                                        setNewPostAuthor={setNewPostAuthor}
+                                        setNewPost={setNewPost}
+                                        setEditing={setEditing}
+                                    />
                             }
                             <ul className={styles.discussionResponses}>
                                 {discussionPostsState.map(({postId, authorName, postDate, content}) => (

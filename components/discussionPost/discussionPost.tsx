@@ -1,5 +1,4 @@
 import React from "react";
-import styles from './Lesson.module.css'
 
 const DiscussionPost = (discussionPost: {
     authorName: string,

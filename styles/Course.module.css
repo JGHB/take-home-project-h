@@ -96,45 +96,6 @@
     color: black;
 }
 
-
-.inputContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.inputLabel {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.nameInput {
-    max-width: 200px;
-    background:black;
-    color: white;
-    border-style: solid;
-    border-color: white;
-    border-radius: 15px;
-    padding: 10px;
-    text-align: center;
-}
-
-.postInput {
-    background:black;
-    color: white;
-    border-style: solid;
-    border-color: white;
-    border-radius: 15px;
-    padding: 10px;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    height: 250px;
-}
-
 .postingOptions {
     display: flex;
     margin-top: 10px;
@@ -160,10 +121,6 @@
     background: white;
     color: black;
 }
-
-.discussionsContainer{
-}
-
 
 .main {
     display: flex;
