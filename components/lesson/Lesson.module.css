@@ -1,0 +1,13 @@
+.lessonTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.lessonPostDate {
+    display: flex;
+    justify-content: center;
+}
+
+.lessonContent {
+    margin-top: 10px;
+}

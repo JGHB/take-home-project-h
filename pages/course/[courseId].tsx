@@ -7,6 +7,7 @@ import styles
 import React, {
     useState
 } from 'react';
+import Lesson from "../../components/lesson/lesson";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const courseId = context.params?.courseId as string
@@ -276,18 +277,7 @@ export default function Post({courseData}: courseProps) {
                                           }) => (
                                 <li className={styles.lessonItem}
                                     key={id}>
-                                    <div>
-                                        <h1 className={styles.lessonTitle}>
-                                            {title}
-                                        </h1>
-                                        <h4 className={styles.lessonPostDate}>
-                                            {postDate}
-                                        </h4>
-                                        <div
-                                            className={styles.lessonContent}>
-                                            {content}
-                                        </div>
-                                    </div>
+                                    <Lesson title={title} postDate={postDate} content={content}/>
                                 </li>
                             ))}
                         </ul>
