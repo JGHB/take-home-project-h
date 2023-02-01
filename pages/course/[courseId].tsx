@@ -226,6 +226,7 @@ export default function Post({courseData}: courseProps) {
                     <h1 className={styles.pageTitle}>
                         {courseData.title}
                     </h1>
+                    <Link href={`/`} className={styles.homeButton}>Back to Home</Link>
                     <div
                         className={styles.toggleOptions}>
                         {viewMode === 'lessons' &&
@@ -327,11 +328,8 @@ export default function Post({courseData}: courseProps) {
                             </ul>
                         </div>
                     }
-                    <Link
-                        href={`/courses`}>Back
-                        to
-                        Courses</Link>
                 </div>
+                <Link href={`/`} className={styles.homeButton}>Back to Home</Link>
             </main>
         </>
     );
