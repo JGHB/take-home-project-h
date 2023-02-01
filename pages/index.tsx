@@ -1,9 +1,6 @@
 import Head from 'next/head'
 import Link from "next/link";
-import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -26,8 +23,14 @@ export default function Home() {
                     <Link href={`/courses`} className={styles.serviceCard}>
                         Courses
                     </Link>
-                    <Link href={`/payments`} className={styles.serviceCard}>
-                        Payments
+                    <Link href={`/free-books`} className={styles.serviceCard}>
+                        Free EBooks
+                    </Link>
+                    <Link href={`/`} className={styles.serviceCard}>
+                        Payments (Coming soon)
+                    </Link>
+                    <Link href={`/`} className={styles.serviceCard}>
+                        Applications (Coming soon)
                     </Link>
                 </div>
             </div>

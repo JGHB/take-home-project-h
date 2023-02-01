@@ -2,6 +2,11 @@
     display: flex;
     justify-content: center;
     font-size: 50px;
+    text-align: center;
+}
+
+.container {
+    width: 100%
 }
 
 
@@ -10,11 +15,15 @@
     justify-content: center;
 }
 
+.courseList {
+    width: 100%
+}
+
 .courseListItem {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 700px;
+    max-width: 100%;
     margin: auto auto 10px;
     height: 50px;
     border-color: white;
