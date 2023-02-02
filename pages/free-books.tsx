@@ -20,7 +20,7 @@ export default function FreeBooks() {
 
     const updateBooks = async () => {
         if (currentSubject === 'choose') return
-        const data = await fetch(`http://gutendex.com/books/?topic=${currentSubject}`)
+        const data = await fetch(`https://gutendex.com/books/?topic=${currentSubject}`)
             .then((response) => response.json())
         const newBooks = data.results.map((book: any) => {
             return {
