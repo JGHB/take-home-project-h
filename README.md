@@ -1,38 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Design Choices
 
-## Getting Started
+I designed this demo application around two main features I wanted to showcase. One of these features is the Course page, where users can view lessons and a discussion board. Users can write their own posts answering discusion questions and add them to the board. For the scope of this demo project, this page is static and any posts added to the discussion board will dissapear when the page is refreshed, but this could be changed with the addition of a backend service keeping track of posts. I decided to implement this feature because it's a feature that could be expanded upon significantly going forward, and contains functionality that could be applied elsewhere to other features. Within this feature, lesson plans could become more complex, with embedded videos, functionality that breaks up curriculum into chunks, and more. Elements of this page could also be applied in other features within the LMS, such as building forms applications.
 
-First, run the development server:
+The second major feature I created was a page where users can access free scientific literature through the [Project Gutenberg API](https://gutendex.com/). This feature allows users to select a literature subject from a list and view dozens books falling under the chosen genre. Users can download listed books as PDF or EPUB files. This feature could later be expanded to be used for targeted marketing to match users with certain products or provide students integrated access to publications accessible through their university.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Each page created in this demo is responsive and can be viewed on any screen size. I tried to follow basic rules of accessible design by making use of contrast, hover and selected states, and by maintaining functionality of the page if zoomed in.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development Decisions
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+I decided to use React as the main technology to build this LMS portal. When thinking about different web  
+technologies and how they scale, React would fall on the end of the spectrum where it requires more of a  
+time investment upfront in order to get the same level of functionality as you would through a tool such as  
+Wordpress. In the long term, however, React allows for more versatility as an application gets bigger and more
+complex, which helps to avoid growing pains as more and more features are added to the product. I chose to
+use React for this reason. I also decided to use the [Next.js](https://nextjs.org/) framework, which helps to improve application performance and ease of development. This was my first time using Next. I wanted to go
+beyond what I had read about it's benefits and drawbacks and experience it for myself in order to be able to make a judgement on whether it would scale well if this demo application was to be expanded upon. I built this demo
+from the [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) starter code.
+I used Typescript for this project over javascript since it also helps with project scalability.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Future Improvements
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+There are several improvements that could be made to this application going forward. Two major additions that 
+would significantly increase the practicality of the application would be to add authentication and a backend that would allow for persistant data. With these two changes, many areas of functionality would open up. The application could have different discussion 
+boards with different questions, and user responses would not dissapear after the page is refreshed. Authentication would allow for the specification of different kinds of users, such as students, professors, or adiminstrators, who all would have unique experiences within
+the application. Interfaces to allow for the creation of new content could be developed to allow for professors and administrators. With regards to the feature that provides free online access to books, improvements could be made such as adding a search feature and pagination to make the page more user friendly. As the application grew, it would become important to add unit and integration testing to make sure that it continued to work properly, despite having a growing number of interconnected features.
