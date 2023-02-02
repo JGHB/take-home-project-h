@@ -17,7 +17,6 @@ export default function FreeBooks() {
     const [currentSubject, setCurrentSubject] = useState<string>('choose')
     const [books, setBooks] = useState<BookData[] | null>(null)
 
-
     const updateBooks = async () => {
         if (currentSubject === 'choose') return
         const data = await fetch(`https://gutendex.com/books/?topic=${currentSubject}`)
