@@ -59,6 +59,11 @@
     padding-right: 10px;
 }
 
+.homeButton:hover {
+    background: white;
+    color: black;
+}
+
 .main {
     display: flex;
     flex-direction: column;

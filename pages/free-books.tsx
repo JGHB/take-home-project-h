@@ -3,7 +3,6 @@ import styles from '@/styles/FreeBooks.module.css'
 import React, {useState} from "react";
 import Book from "@/components/book/book";
 
-
 export async function getStaticProps() {
 
     const mathematicsData = await fetch(`https://gutendex.com/books/?topic=mathematics`)
@@ -27,8 +26,6 @@ export async function getStaticProps() {
         physiologyData,
         microBiologyData
     }
-
-    console.log(allPostsData)
 
     return {
         props: {
@@ -79,7 +76,6 @@ export default function FreeBooks({allPostsData}: postsProps) {
 
     const updateBooks = async () => {
         if (currentSubject === 'choose') return
-        console.log("The Current Subject is " + currentSubject)
         switch(currentSubject) {
             case 'mathematics': {
                 setBooks(filteredMathematicsBooks)
@@ -111,7 +107,6 @@ export default function FreeBooks({allPostsData}: postsProps) {
     }
 
     const handleSubjectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        console.log(e.target.value)
         setCurrentSubject(e.target.value);
     };
 
