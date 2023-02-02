@@ -33,7 +33,6 @@ const Book = (book : {book: BookData}) => {
                     {book.book.pdfURL &&
                         <a
                             href={book.book.pdfURL}
-                            target="_blank"
                             className={styles.downloadOption}
                         >
                             PDF
